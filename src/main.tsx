@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router'
 
 import './index.css'
-import IndexPage from './pages/IndexPage.tsx'
-import TicketPage from './pages/TicketPage.tsx'
+import IndexPage from 'pages/IndexPage.tsx'
+import TicketPage from 'pages/TicketPage.tsx'
 
 const root = document.getElementById('root')
 
