@@ -9,15 +9,16 @@ interface ControlRootProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
 
 const ControlRoot = ({ label, children, info, error }: ControlRootProps) => {
   const iconAlt = error ? "Input Field Error" : "Relevant Information"
+  const errorValidation = error != undefined && error.length > 0
 
   return (
     <label>
       <span>{label}</span>
       {children}
-      {(info || error) && (
+      {((errorValidation && error) || info) && (
         <div>
           <img src={_iconInfo} alt={iconAlt} />
-          <span>{error || info}</span>
+          <span>{(errorValidation && error) || info}</span>
         </div>
       )}
     </label>
