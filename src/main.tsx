@@ -13,7 +13,7 @@ createRoot(root!).render(
     <BrowserRouter>
       <Routes>
         <Route index element={<IndexPage />} />
-        <Route path='/ticket' element={<TicketPage />} /> {/* 🚧 T.B.D */}
+        <Route path='/ticket' element={<TicketPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
