@@ -18,7 +18,7 @@ const ControlRoot = ({ label, children, info, error }: ControlRootProps) => {
       {((errorValidation && error) || info) && (
         <div>
           <img src={_iconInfo} alt={iconAlt} />
-          <span>{(errorValidation && error) || info}</span>
+          <small>{(errorValidation && error) || info}</small>
         </div>
       )}
     </label>
