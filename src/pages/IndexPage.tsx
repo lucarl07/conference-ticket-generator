@@ -1,5 +1,5 @@
 import FullLogo from 'components/FullLogo'
-import HeadingGroup from 'components/HeadingGroup'
+import Heading from 'components/Heading'
 import Form from 'components/Form'
 import Control from 'components/Control'
 import SubmitBtn from 'components/SubmitBtn'
@@ -11,9 +11,14 @@ export default function IndexPage() {
         <FullLogo />
       </header>
       <main>
-        <HeadingGroup 
-          title="Your journey to Coding Conf 2025 starts here!"
-          subtitle="Secure your spot at next year's biggest coding conference." />
+        <Heading.Group>
+          <Heading.Title>
+            Your journey to Coding Conf 2025 starts here!
+          </Heading.Title>
+          <Heading.Subtitle>
+            Secure your spot at next year's biggest coding conference.
+          </Heading.Subtitle>
+        </Heading.Group>
         <Form>
           <Control.Root label="Avatar">
             <Control.FileInput message="Upload your photo (JPG or PNG, max size: 500KB)." />
