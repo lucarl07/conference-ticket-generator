@@ -3,7 +3,8 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router'
 
 import './index.css'
-import App from './App.tsx'
+import IndexPage from './pages/IndexPage.tsx'
+import TicketPage from './pages/TicketPage.tsx'
 
 const root = document.getElementById('root')
 
@@ -11,7 +12,8 @@ createRoot(root!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route index element={<App />} />
+        <Route index element={<IndexPage />} />
+        <Route path='/ticket' element={<TicketPage />} /> {/* 🚧 T.B.D */}
       </Routes>
     </BrowserRouter>
   </StrictMode>,
