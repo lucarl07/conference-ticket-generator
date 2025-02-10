@@ -9,7 +9,7 @@ interface HeadingGroupProps {
 const HeadingGroup = ({ title, subtitle }: HeadingGroupProps) => {
   return (
     <hgroup>
-      <h2>{title}</h2>
+      <h1>{title}</h1>
       <p>{subtitle}</p>
     </hgroup>
   )
