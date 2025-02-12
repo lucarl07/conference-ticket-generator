@@ -9,23 +9,27 @@ import AppView from 'pages/AppView'
 import FormPage from 'pages/IndexPage'
 import TicketPage from 'pages/TicketPage'
 
+// Utilities:
+import FormPageAction from 'utils/actions/FormPageAction'
+
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <AppView />,
+    action: FormPageAction,
     children: [
       {
         index: true,
         element: <FormPage />
       },
       {
-        path: "/ticket",
+        path: '/ticket',
         element: <TicketPage />
       }
     ]
   },
   {
-    path: "*?",
+    path: '*?',
     element: <Navigate to="/" />
   },
 ])
