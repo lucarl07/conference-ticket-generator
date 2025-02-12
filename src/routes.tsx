@@ -1,21 +1,28 @@
 // Dependencies:
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom"
 
 // Styles:
 import './index.css'
 
 // Pages:
-import IndexPage from 'pages/IndexPage.tsx'
-import TicketPage from 'pages/TicketPage.tsx'
+import AppView from 'pages/AppView'
+import FormPage from 'pages/IndexPage'
+import TicketPage from 'pages/TicketPage'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <IndexPage />
-  },
-  {
-    path: "/ticket",
-    element: <TicketPage />
+    element: <AppView />,
+    children: [
+      {
+        index: true,
+        element: <FormPage />
+      },
+      {
+        path: "/ticket",
+        element: <TicketPage />
+      }
+    ]
   },
   {
     path: "*?",
