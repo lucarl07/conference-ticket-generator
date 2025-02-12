@@ -2,11 +2,11 @@ import { useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
 import _iconUpload from 'images/icon-upload.svg'
 
-interface ControlFileInputProps {
+interface ControlFileInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   message?: string
 }
 
-const ControlFileInput = ({ message }: ControlFileInputProps) => {
+const ControlFileInput = ({ message, ...rest }: ControlFileInputProps) => {
   const onDrop = useCallback((acceptedFiles: any) => {
     // Do something with the files
   }, [])
@@ -15,7 +15,7 @@ const ControlFileInput = ({ message }: ControlFileInputProps) => {
 
   return (
     <div {...getRootProps()}>
-      <input {...getInputProps()} />
+      <input {...rest} {...getInputProps()} />
       <div>
         <img src={_iconUpload} alt="Upload Icon" />
         <p>{message || "Drag and drop or click to upload"}</p>
