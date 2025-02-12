@@ -1,5 +1,5 @@
 // Dependencies:
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
 // Styles:
 import './index.css'
@@ -16,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/ticket",
     element: <TicketPage />
+  },
+  {
+    path: "*?",
+    element: <Navigate to="/" />
   },
 ])
 
