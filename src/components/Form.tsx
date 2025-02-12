@@ -2,9 +2,9 @@ import React from 'react'
 
 interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {}
 
-const Form = ({ children }: FormProps) => {
+const Form = ({ children, ...rest }: FormProps) => {
   return (
-    <form method="post">
+    <form {...rest} method="post">
       {children}
     </form>
   )
