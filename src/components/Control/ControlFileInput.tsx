@@ -1,25 +1,43 @@
-import { useCallback } from 'react'
-import { useDropzone } from 'react-dropzone'
+// Hooks:
+import { useRef, useState } from 'react'
+
+// Assets:
 import _iconUpload from 'images/icon-upload.svg'
+import _imageAvatar from 'images/image-avatar.jpg' // Placeholder asset, will be removed later
 
 interface ControlFileInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   message?: string
 }
 
 const ControlFileInput = ({ message, ...rest }: ControlFileInputProps) => {
-  const onDrop = useCallback((acceptedFiles: any) => {
-    // Do something with the files
-  }, [])
+  const inputRef = useRef(null)
 
-  const {getRootProps, getInputProps} = useDropzone({onDrop})
+  const [selectedFile, setSelectedFile] = useState(null)
 
   return (
-    <div {...getRootProps()}>
-      <input {...rest} {...getInputProps()} />
-      <div>
-        <img src={_iconUpload} alt="Upload Icon" />
-        <p>{message || "Drag and drop or click to upload"}</p>
-      </div>
+    <div>
+      {/* Will have its attributes passed down to buttons: */}
+      <input 
+        {...rest} 
+        type="file" 
+        ref={inputRef}
+        style={{ display: 'none' }} 
+      />
+
+      {selectedFile ? (
+        <button>
+          <img src={_iconUpload} alt="Upload Icon" />
+          <span>{message}</span>
+        </button>
+      ) : (
+        <div>
+          <img src={_imageAvatar} alt="Selected File" />
+          <div>
+            <button>Change file</button>
+            <button>Remove file</button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
