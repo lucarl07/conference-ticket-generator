@@ -1,4 +1,4 @@
-import Form from 'components/Form'
+import { Form } from 'react-router-dom'
 import Control from 'components/Control'
 import SubmitBtn from 'components/SubmitBtn'
 
