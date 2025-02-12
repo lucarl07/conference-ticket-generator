@@ -1,6 +1,6 @@
-import Group from './HeadingGroup/HeadingGroup'
-import Title from './HeadingTitle/HeadingTitle'
-import Subtitle from './HeadingSubtitle/HeadingSubtitle'
+import Group from './HeadingGroup'
+import Title from './HeadingTitle'
+import Subtitle from './HeadingSubtitle'
 
 const Heading = {
   Group, Title, Subtitle

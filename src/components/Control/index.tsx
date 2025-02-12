@@ -1,6 +1,6 @@
-import Root from './ControlRoot/ControlRoot'
-import Input from './ControlInput/ControlInput'
-import FileInput from './ControlFileInput/ControlFileInput'
+import Root from './ControlRoot'
+import Input from './ControlInput'
+import FileInput from './ControlFileInput'
 
 const Control = {
   FileInput,
